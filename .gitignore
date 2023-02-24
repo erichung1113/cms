@@ -1,0 +1,15 @@
+*~
+.DS_Store
+*.mo
+.*.sw?
+*.pyc
+build
+dist
+cms.egg-info
+.testfailures
+.unittestfailures
+.coverage*
+cache/
+lib/
+log/
+.vagrant/
