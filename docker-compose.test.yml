@@ -19,10 +19,10 @@ services:
     volumes:
       - "./codecov:/home/cmsuser/cms/codecov"
     ports:
-	  - 8888:8888
-	  - 8889:8889
-	  - 8890:8890
-	privileged: true
+      - 8888:8888
+      - 8889:8889
+      - 8890:8890
+    privileged: true
     command: >
       wait-for-it db:5432 -- sh -c "
       createdb --host=db --username=postgres cmsdb ;
