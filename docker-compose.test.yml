@@ -29,6 +29,10 @@ services:
       createdb --host=db --username=postgres cmsdbfortesting ;
       cmsInitDB ;
       sudo chown cmsuser:cmsuser ./codecov ;
+      sudo apt install iputils-ping -y;
+      sudo chmod 777 /usr/local/lib/python3.8/dist-packages/cms-1.5.dev0-py3.8.egg/cms/grading/Sandbox.py;
+      sudo sed -i 's/self.cgroup = config.use_cgroups  # --cg/#self.cgroup = config.use_cgroups  # --cg/g' /usr/local/lib/python3.8/dist-packages/cms-1.5.dev0-py3.8.egg/cms/grading/Sandbox.py; 
+      ping 8.8.8.8;
       #TEST_SUITE=unittests cmsRunTests -v --coverage codecov/unittests.xml ;
       #TEST_SUITE=functionaltests cmsRunTests -v --coverage codecov/functionaltests.xml ;
       "
